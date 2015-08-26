@@ -1,0 +1,29 @@
+<EXE>
+../build/linux/wv/viewer
+<BUILD_DIR>
+../build/linux/wv
+<CC>
+g++4.9
+<LL>
+g++4.9
+<LFLAG>
+-g -std=c++11 -L/home/henry/usr/lib -L/usr/local/lib  -L../build/linux/sens  -L../build/linux/wr -Wl,-rpath,/home/henry/usr/lib64,-rpath,/usr/local/lib,-rpath,$(LL_PATH)/build/linux/sens,-rpath,$(LL_PATH)/build/linux/wr -lrt -lm -lz -lfreetype -lpthread -lsens -llayen -lmigdb
+<CFLAG>
+-std=c++11 -D_REENTRANT  
+<CINCLUDE>
+-I/usr/include/freetype2 -I. -I.. -I../fox -I../sens -I../wr 
+<FILE>
+makewv_in
+<PATH>
+../machine
+socket.cpp
+socket.h
+machine.cpp
+machine.h
+posix_sys.cpp
+posix_sys.h
+linux.cpp
+linux.h
+loop.cpp
+loop.h
+

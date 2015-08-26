@@ -1,0 +1,26 @@
+EXE = ../build/linux/sens/libsens.so
+
+BD = ../build/linux/sens
+
+CC = g++4.9
+
+LL = g++4.9
+
+LFLAG = -std=c++11 -shared -L/usr/local/lib 
+
+CFLAG = -std=c++11 -fPIC -Wall 
+
+CINCLUDE = -I/usr/include/freetype2 -I.. -l../fox 
+
+OBJ = $(BD)/retina.o 
+
+all : $(EXE) $(OBJ) 
+
+$(EXE) : $(OBJ)
+	$(LL) $(OBJ) $(LFLAG)  -o $(EXE)
+
+$(BD)/retina.o : retina.cpp retina.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c retina.cpp -o $(BD)/retina.o
+
+clean : 
+	rm $(EXE) $(OBJ)

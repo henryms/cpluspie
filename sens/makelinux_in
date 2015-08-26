@@ -1,0 +1,18 @@
+<EXE>
+../build/linux/sens/libsens.so
+<BUILD_DIR>
+../build/linux/sens
+<CC>
+g++4.9
+<LL>
+g++4.9
+<LFLAG>
+-std=c++11 -shared -L/usr/local/lib 
+<CFLAG>
+-std=c++11 -fPIC -Wall 
+<CINCLUDE>
+-I/usr/include/freetype2 -I.. -l../fox 
+<SOURCE>
+retina.cpp
+retina.h
+

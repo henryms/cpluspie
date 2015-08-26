@@ -1,0 +1,33 @@
+<EXE>
+../build/x11/wv/viewer
+<BUILD_DIR>
+../build/x11/wv
+<CC>
+g++4.9
+<LL>
+g++4.9
+<LFLAG>
+-g -std=c++0x -L/home/henry/usr/lib -L/usr/local/lib -L../build/x11/sens -L../build/x11/wr -Wl,-rpath,/home/henry/usr/lib64,-rpath,/usr/local/lib,-rpath,$(LL_PATH)/build/x11/sens,-rpath,$(LL_PATH)/build/x11/wr -lX11 -lXi -lfreetype -lsens -llayen -lmigdb
+<CFLAG>
+-g -std=c++0x  -Wall -D_REENTRANT -D_GLIBCXX_USE_NANOSLEEP -D_VIEWER
+<CINCLUDE>
+-I/home/henry/usr/include/c++/4.9.1 -I/home/henry/usr/include/c++/4.9.1/bits -I/usr/include/X11 -I/usr/include -I/usr/include/freetype2 -I. -I.. -I../fox -I../sens -I../wr 
+<FILE>
+makewv_in
+<PATH>
+../machine
+posix_sys.cpp
+posix_sys.h
+socket.cpp
+socket.h
+unix11.cpp
+unix11.h
+xsel.cpp
+xsel.h
+xdump.cpp
+xdump.h
+xinput2.cpp
+xinput2.h
+machine.cpp
+machine.h
+

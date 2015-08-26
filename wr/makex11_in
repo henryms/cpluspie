@@ -1,0 +1,24 @@
+<EXE>
+../build/x11/wr/liblayen.so
+<BUILD_DIR>
+../build/x11/wr
+<CC>
+g++4.9
+<LL>
+g++4.9
+<LFLAG>
+-std=c++11 -shared -L/usr/local/lib 
+<CFLAG>
+-std=c++11 -fPIC -Wall -D_GLIBCXX_USE_NANOSLEEP
+<CINCLUDE>
+-I/home/henry/usr/include/c++/4.9.1 -I/home/henry/usr/include/c++/4.9.1/bits -I/usr/include -I../ -l../fox -I/usr/include/freetype2 
+<SOURCE>
+layen.cpp
+layen.h
+font.cpp
+font.h
+texel.cpp
+texel.h
+shared.cpp
+shared.h
+

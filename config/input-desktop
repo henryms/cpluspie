@@ -1,0 +1,4 @@
+KEYBOARD
+/dev/input/event2
+MOUSE
+/dev/input/event4

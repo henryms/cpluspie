@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#here in cpie1
+
+
+mkdir -p build/$1/sens build/$1/wr build/$1/wv
+
+#if [ "$2" == 'gate' ]; then 
+	make -f makegate clean
+	make -f makegate
+#fi
+
+
+echo make$1
+make -f make$1 clean
+cd sens
+make -f make$1 clean
+cd ../wv
+make -f make$1 clean
+cd ../wr
+make -f make$1 clean
+cd ../sens
+make -f make$1
+cd ../wr
+make -f make$1
+cd ..
+make -f make$1
+cd wv
+make -f make$1
+cd ..
+

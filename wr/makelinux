@@ -1,0 +1,35 @@
+EXE = ../build/linux/wr/liblayen.so
+
+BD = ../build/linux/wr
+
+CC = g++-4.9
+
+LL = g++-4.9
+
+LFLAG = -std=c++11 -shared -L/usr/local/lib 
+
+CFLAG = -std=c++11 -fPIC -Wall 
+
+CINCLUDE = -I/usr/include/freetype2 -I.. -l../fox 
+
+OBJ = $(BD)/layen.o $(BD)/font.o $(BD)/texel.o $(BD)/shared.o 
+
+all : $(EXE) $(OBJ) 
+
+$(EXE) : $(OBJ)
+	$(LL) $(OBJ) $(LFLAG)  -o $(EXE)
+
+$(BD)/layen.o : layen.cpp layen.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c layen.cpp -o $(BD)/layen.o
+
+$(BD)/font.o : font.cpp font.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c font.cpp -o $(BD)/font.o
+
+$(BD)/texel.o : texel.cpp texel.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c texel.cpp -o $(BD)/texel.o
+
+$(BD)/shared.o : shared.cpp shared.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c shared.cpp -o $(BD)/shared.o
+
+clean : 
+	rm $(EXE) $(OBJ)

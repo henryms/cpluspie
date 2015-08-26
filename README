@@ -1,0 +1,30 @@
+set environment variable LL_PATH to the cpie directory
+
+X11
+==
+
+build with: ./0b x11
+
+set the environment for x11: build/x11/gate -s x11 (or edit config/environment)
+
+run: build/gate <file> or run directly build/x11/lamb <file>
+
+linux fb
+=====
+
+build with: ./0b linux
+
+set the environment for linux: build/linux/gate -s linux (or edit config/environment)
+
+identify the device for the Keyboard and Mouse and set config/input accordingly. Give the /dev/input/event? suffisante access autorisation.
+
+run: build/gate <file> or run directly build/linux/lamb <file>
+
+=====
+
+you may install the script machine/utils/lamb.example to /usr/bin/lamb for example. The binaries are not intended to be installed.    
+
+The editor is similar to vim.
+CtrlR S bring you to the command line, then i and :q to quit. 
+
+CtrlR T to recompile the source and relaunch if successful. 

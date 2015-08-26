@@ -1,0 +1,134 @@
+EXE = build/linux/lamb
+
+BD = build/linux
+
+CC = g++4.9
+
+LL = g++4.9
+
+LFLAG = -g -std=c++0x  -L/usr/local/lib -Lbuild/linux/sens -Lbuild/linux/wr -Wl,-rpath,/usr/local/lib,-rpath,$(LL_PATH)/build/linux/sens,-rpath,$(LL_PATH)/build/linux/wr -lrt -lm -lz -lfreetype -lpthread -lsens -llayen -lmigdb
+
+CFLAG = -g -std=c++0x -D_REENTRANT 
+
+CINCLUDE = -I/usr/include -I/usr/include/freetype2 -I. -Ifox
+
+OBJ = $(BD)/mstream.o $(BD)/standard.o $(BD)/global.o $(BD)/echo.o $(BD)/message.o $(BD)/shell.o $(BD)/make.o $(BD)/object.o $(BD)/wobject.o $(BD)/keyb.o $(BD)/comtab4.o $(BD)/main.o $(BD)/lamb.o $(BD)/lamb_ct.o $(BD)/home.o $(BD)/line.o $(BD)/spline.o $(BD)/matrix.o $(BD)/carte.o $(BD)/image.o $(BD)/land.o $(BD)/eyes.o $(BD)/hand.o $(BD)/status.o $(BD)/mouse.o $(BD)/debug.o $(BD)/fox/regexp.o $(BD)/fox/edit.o $(BD)/fox/edit_ct.o $(BD)/fox/bookmarks.o $(BD)/fox/cash.o $(BD)/library/wdslib.o $(BD)/machine/socket.o $(BD)/machine/machine.o $(BD)/machine/posix_sys.o $(BD)/machine/linux.o $(BD)/machine/loop.o 
+
+all : $(EXE) $(OBJ) 
+
+$(EXE) : $(OBJ)
+	$(LL) $(OBJ) $(LFLAG)  -o $(EXE)
+
+$(BD)/mstream.o : mstream.cpp mstream.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c mstream.cpp -o $(BD)/mstream.o
+
+$(BD)/standard.o : standard.cpp standard.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c standard.cpp -o $(BD)/standard.o
+
+$(BD)/global.o : global.cpp global.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c global.cpp -o $(BD)/global.o
+
+$(BD)/echo.o : echo.cpp echo.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c echo.cpp -o $(BD)/echo.o
+
+$(BD)/message.o : message.cpp message.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c message.cpp -o $(BD)/message.o
+
+$(BD)/shell.o : shell.cpp shell.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c shell.cpp -o $(BD)/shell.o
+
+$(BD)/make.o : make.cpp make.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c make.cpp -o $(BD)/make.o
+
+$(BD)/object.o : object.cpp object.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c object.cpp -o $(BD)/object.o
+
+$(BD)/wobject.o : wobject.cpp wobject.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c wobject.cpp -o $(BD)/wobject.o
+
+$(BD)/keyb.o : keyb.cpp keyb.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c keyb.cpp -o $(BD)/keyb.o
+
+$(BD)/comtab4.o : comtab4.cpp comtab4.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c comtab4.cpp -o $(BD)/comtab4.o
+
+$(BD)/main.o : main.cpp main.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c main.cpp -o $(BD)/main.o
+
+$(BD)/lamb.o : lamb.cpp lamb.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c lamb.cpp -o $(BD)/lamb.o
+
+$(BD)/lamb_ct.o : lamb_ct.cpp lamb_ct.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c lamb_ct.cpp -o $(BD)/lamb_ct.o
+
+$(BD)/home.o : home.cpp home.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c home.cpp -o $(BD)/home.o
+
+$(BD)/line.o : line.cpp line.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c line.cpp -o $(BD)/line.o
+
+$(BD)/spline.o : spline.cpp spline.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c spline.cpp -o $(BD)/spline.o
+
+$(BD)/matrix.o : matrix.cpp matrix.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c matrix.cpp -o $(BD)/matrix.o
+
+$(BD)/carte.o : carte.cpp carte.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c carte.cpp -o $(BD)/carte.o
+
+$(BD)/image.o : image.cpp image.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c image.cpp -o $(BD)/image.o
+
+$(BD)/land.o : land.cpp land.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c land.cpp -o $(BD)/land.o
+
+$(BD)/eyes.o : eyes.cpp eyes.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c eyes.cpp -o $(BD)/eyes.o
+
+$(BD)/hand.o : hand.cpp hand.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c hand.cpp -o $(BD)/hand.o
+
+$(BD)/status.o : status.cpp status.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c status.cpp -o $(BD)/status.o
+
+$(BD)/mouse.o : mouse.cpp mouse.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c mouse.cpp -o $(BD)/mouse.o
+
+$(BD)/debug.o : debug.cpp debug.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c debug.cpp -o $(BD)/debug.o
+
+$(BD)/fox/regexp.o : fox/regexp.cpp fox/regexp.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c fox/regexp.cpp -o $(BD)/fox/regexp.o
+
+$(BD)/fox/edit.o : fox/edit.cpp fox/edit.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c fox/edit.cpp -o $(BD)/fox/edit.o
+
+$(BD)/fox/edit_ct.o : fox/edit_ct.cpp fox/edit_ct.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c fox/edit_ct.cpp -o $(BD)/fox/edit_ct.o
+
+$(BD)/fox/bookmarks.o : fox/bookmarks.cpp fox/bookmarks.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c fox/bookmarks.cpp -o $(BD)/fox/bookmarks.o
+
+$(BD)/fox/cash.o : fox/cash.cpp fox/cash.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c fox/cash.cpp -o $(BD)/fox/cash.o
+
+$(BD)/library/wdslib.o : library/wdslib.cpp library/wdslib.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c library/wdslib.cpp -o $(BD)/library/wdslib.o
+
+$(BD)/machine/socket.o : machine/socket.cpp machine/socket.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c machine/socket.cpp -o $(BD)/machine/socket.o
+
+$(BD)/machine/machine.o : machine/machine.cpp machine/machine.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c machine/machine.cpp -o $(BD)/machine/machine.o
+
+$(BD)/machine/posix_sys.o : machine/posix_sys.cpp machine/posix_sys.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c machine/posix_sys.cpp -o $(BD)/machine/posix_sys.o
+
+$(BD)/machine/linux.o : machine/linux.cpp machine/linux.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c machine/linux.cpp -o $(BD)/machine/linux.o
+
+$(BD)/machine/loop.o : machine/loop.cpp machine/loop.h
+	$(CC) $(CFLAG) $(CINCLUDE) -c machine/loop.cpp -o $(BD)/machine/loop.o
+
+clean : 
+	rm $(EXE) $(OBJ)

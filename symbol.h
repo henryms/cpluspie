@@ -1,0 +1,91 @@
+#ifndef SYMBOL_H
+#define SYMBOL_H
+
+
+
+const int request_handle = -1;
+const int comunicate_handle = -2;
+const int block = -3;
+const int erase_and_set_vectors = 2;
+const int quit = 4;
+const int semantic = 5;
+
+
+enum {
+	class_row,
+	NEW_LINE_U,
+	NEW_LINE_D,
+	COPY_LINE,
+	DELETE_LINE,
+	CUT_LINE,
+	DELETE_FILE,
+	NEXT_WORD_BEG,
+	PREV_WORD_BEG,
+	NEXT_WORD_END,
+	LINE_BEG,
+	LINE_END,
+	LINE_LAST_CHARACTER,
+	PAGE_D,
+	PAGE_U,
+	LINE_D,
+	LINE_U,
+	HOME,
+	END,
+	PASTE,
+	CUT,
+	DELETE,
+	COPY,
+	CHANGE,
+	XCHANGE,
+	CUT_WORD,
+	INC_COLUMN,
+	DEC_COLUMN,
+	INC_LINE,
+	DEC_LINE,
+	INC_ROW,
+	DEC_ROW,
+	SEL,
+	CHARACTER,
+	SPACE,
+	TAB,
+	MARK,
+	GO_TO_MARK,
+	INSERT,
+	COMMAND,
+	VISUAL,
+	NONE,
+	REVERT,
+	STATIC,
+	NORTH,
+	NORTH_WEST,
+	WEST_NORTH,
+	WEST,
+	WEST_SOUTH,
+	SOUTH_WEST,
+	SOUTH,
+	SOUTH_EAST,
+	EAST_SOUTH,
+	EAST,
+	EAST_NORTH,
+	NORTH_EAST,
+	SHIFT,
+	ROTATE,
+	SHIFT_OBJECT,
+	ROTATE_OBJECT,
+	POINT,
+	COMPILE_SNOW,
+	CLEAN_SNOW,
+	OTHER_PROJECT,
+	ZERO,
+	SPLINE,
+	CARTESIAN,
+	LINE,
+	FRAME,
+	EDITOR,
+	CIRCLE,
+	LAMB,
+	IMAGE,
+	WOBJECT
+};
+
+#endif

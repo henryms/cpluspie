@@ -1,0 +1,33 @@
+<EXE>
+build/x11/lamb
+<BUILD_DIR>
+build/x11
+<CC>
+g++4.9
+<LL>
+g++4.9
+<LFLAG>
+-g -std=c++0x  -L/home/henry/usr/lib -L/usr/local/lib -Wl,-rpath,/home/henry/usr/lib64,-rpath,/usr/local/lib,-rpath,$(LL_PATH)/build/x11/sens,-rpath,$(LL_PATH)/build/x11/wr -Lbuild/x11/sens -Lbuild/x11/wr -lX11 -lXi -lfreetype -lsens -llayen -lmigdb
+<CFLAG>
+-g -std=c++0x  -Wall -D_REENTRANT -D_GLIBCXX_USE_NANOSLEEP
+<CINCLUDE>
+-I/usr/include/X11 -I/usr/include -I/usr/include/freetype2 -I. -Ifox
+<FILE>
+makewss_in
+<PATH>
+machine
+posix_sys.cpp
+posix_sys.h
+socket.cpp
+socket.h
+unix11.cpp
+unix11.h
+xsel.cpp
+xsel.h
+xdump.cpp
+xdump.h
+xinput2.cpp
+xinput2.h
+machine.cpp
+machine.h
+

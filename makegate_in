@@ -1,0 +1,15 @@
+<EXE>
+gate
+<CC>
+g++
+<LL>
+g++
+<LFLAG>
+-g -std=c++0x  -L/usr/local/lib -Wl,-rpath,/usr/local/lib 
+<CFLAG>
+-g -std=c++0x  -Wall -D_REENTRANT
+<CINCLUDE>
+-I/usr/include -I. 
+<SOURCE>
+gate.cpp
+gate.h

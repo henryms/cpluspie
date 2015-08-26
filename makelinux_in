@@ -1,0 +1,29 @@
+<EXE>
+build/linux/lamb
+<BUILD_DIR>
+build/linux
+<CC>
+g++4.9
+<LL>
+g++4.9
+<LFLAG>
+-g -std=c++0x  -L/usr/local/lib -Lbuild/linux/sens -Lbuild/linux/wr -Wl,-rpath,/usr/local/lib,-rpath,$(LL_PATH)/build/linux/sens,-rpath,$(LL_PATH)/build/linux/wr -lrt -lm -lz -lfreetype -lpthread -lsens -llayen -lmigdb
+<CFLAG>
+-g -std=c++0x -D_REENTRANT 
+<CINCLUDE>
+-I/usr/include -I/usr/include/freetype2 -I. -Ifox
+<FILE>
+makewss_in
+<PATH>
+machine
+socket.cpp
+socket.h
+machine.cpp
+machine.h
+posix_sys.cpp
+posix_sys.h
+linux.cpp
+linux.h
+loop.cpp
+loop.h
+

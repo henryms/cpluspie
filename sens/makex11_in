@@ -1,0 +1,19 @@
+<EXE>
+../build/x11/sens/libsens.so
+<BUILD_DIR>
+../build/x11/sens
+<CC>
+g++4.9
+<LL>
+g++4.9
+<LFLAG>
+-std=c++0x -shared -L/usr/local/lib 
+<CFLAG>
+-std=c++0x -fPIC -Wall -D_GLIBCXX_USE_NANOSLEEP
+<CINCLUDE>
+-I/home/henry/usr/include/c++/4.9.1 -I/usr/include -I../ -l../fox -I/usr/include/freetype2 
+<SOURCE>
+retina.cpp
+retina.h
+spirit.cpp
+spirit.h

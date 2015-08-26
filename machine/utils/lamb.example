@@ -1,0 +1,80 @@
+#!/bin/bash
+
+if [ -z "$LL_PATH" ]; then
+	echo LL_PATH not set
+	exit
+fi
+
+gate=gate
+
+index=0
+while read line; do
+	array[$index]="$line"
+	index=$(($index+1))
+	echo $line
+done < $LL_PATH/config/input
+
+index=0
+for NAME in "${array[@]}" 
+do
+if   ((  ("$index" % 2) == "1" )); then 
+	if [  "$1" == '-a' ]; then
+		sudo chmod 660 "$NAME"
+		sudo chgrp minput "$NAME"
+		quit="true"
+	fi
+	if [  "$1" == '-ar' ]; then
+		chmod 660 "$NAME"
+		chgrp minput "$NAME"
+		quit="true"
+	fi
+	if [ "$1" == '-a0' ]; then
+		chgrp root "$NAME"
+		quit="true"
+	fi
+fi
+index=$(($index+1))
+done
+
+if [ "$quit" == 'true' ]; then
+	echo quit
+	exit
+fi
+
+if  [  "$TERM" == "linux" ]; then
+	if  [  "$line" != "linux" ]; then
+		$LL_PATH/build/$gate -s linux
+	fi
+	
+	index=0
+	for NAME in "${array[@]}" 
+	do
+	if   ((  ("$index" % 2) == "1" )); then 
+		if [ ! -r "$NAME" ]; then
+			echo "can't access $NAME" 
+			error="true";
+		fi	 
+	fi
+	index=$(($index+1))
+	done
+	
+	if [ "$error" == 'true' ]; then
+		exit
+	fi
+
+	echo -e '\033[?17;0;127c'
+	$LL_PATH/build/$gate $*
+	echo -e '\e[?0c'
+elif [ -n "$WAYLAND_DISPLAY" ]; then
+	echo wayland ...
+	if [ "$line" != "wayl" ]; then
+		$LL_PATH/build/$gate -s wayl
+	fi
+	$LL_PATH/build/$gate $*
+else
+	if [   "$line" !=  "x11" ]; then
+		$LL_PATH/build/$gate -s x11
+	fi
+	$LL_PATH/build/$gate $*
+fi 
+
